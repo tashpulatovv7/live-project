@@ -1,59 +1,8 @@
-// import { useMutation } from '@tanstack/react-query';
-// import { useNavigate } from 'react-router-dom';
-// import { toast } from 'sonner';
-// import API from '../utils/API';
-
-// const login = async ({ username, password }) => {
-// 	const res = await API.post('/auth', { username, password });
-// 	return res;
-// };
-
-// const register = async ({ username, password, name }) => {
-// 	const res = await API.post('/users', { username, password, name });
-// 	return res;
-// };
-
-// const useAuth = () => {
-// 	const navigate = useNavigate;
-// 	const loginMutation = useMutation({
-// 		mutationFn: login,
-
-// 		onSuccess(data) {
-// 			localStorage.setItem('token', data.token);
-// 			navigate('/');
-// 			toast.success('Login successful');
-// 		},
-// 		onError(error) {
-// 			toast.error(error.response.data.message);
-// 		},
-// 	});
-
-// 	const registerMutation = useMutation({
-// 		mutationFn: login,
-
-// 		onSuccess(data) {
-// 			localStorage.setItem('token', data.token);
-// 			navigate('/');
-// 			toast.success('Login successful');
-// 		},
-// 		onError(error) {
-// 			toast.error(error.response.data.message);
-// 		},
-// 	});
-
-// 	return {
-// 		loginMutation,
-// 		registerMutation,
-// 	};
-// };
-
-// export default useAuth;
-
 import { useMutation } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 import { useStore } from '../useStore';
-import API from '../utils/Api';
+import API from '../utils/API';
 
 const Login = async ({ username, password }) => {
 	const response = await API.post('/auth', { username, password });
