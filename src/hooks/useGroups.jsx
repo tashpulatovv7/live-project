@@ -16,7 +16,7 @@ const useGroups = searchText => {
 	} = useQuery({
 		queryFn: () => searchGroup(searchText),
 		queryKey: ['search', searchText],
-		enabled: searchText.length > 1,
+		enabled: searchText.length > 0,
 	});
 
 	return {
